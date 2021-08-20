@@ -16,7 +16,7 @@ struct ContentView: View {
     
     var baseNotesMenu: some View {
         MenuButton(
-            label: Text("Base"),
+            label: Text("Base \(ScaleNames[Int(baseNote)])"),
             content: {
                 ForEach(ScaleNames, id: \.self) {name in
                     Button("\(name)", action: {
@@ -43,29 +43,28 @@ struct ContentView: View {
     var body: some View {
         HStack {
             VStack{
-               
+                
                 Slider( value: $volume, in: 0...127)
-//                    .rotationEffect(.degrees(-90.0), anchor: .topLeading)
-//                    .frame(width: 20)
-//                    .offset(y: 100)
+                //                    .rotationEffect(.degrees(-90.0), anchor: .topLeading)
+                //                    .frame(width: 20)
+                //                    .offset(y: 100)
             }
-        VStack {
-            baseNotesMenu
-            ModesMenu
-            Text("\(baseNote.tone.name)")
-            Text("\(scale.tones.description)")
-            Button("play", action: {play()})
+            VStack {
+                baseNotesMenu
+                ModesMenu
+                Text("\(scale.tones.description)")
+                Button("play", action: {play()})
                     
-            .padding()
-        }
+                    .padding()
+            }
         }
     }
     
     func play() {
         var sequence : MusicSequence? = nil
-        var musicSequenceStatus: OSStatus = NewMusicSequence(&sequence)
+        NewMusicSequence(&sequence)
         var track : MusicTrack? = nil
-        var musicTrack = MusicSequenceNewTrack(sequence!, &track)
+        MusicSequenceNewTrack(sequence!, &track)
         var time = MusicTimeStamp(1.0)
         
         
@@ -78,14 +77,15 @@ struct ContentView: View {
                                            releaseVelocity: 0,
                                            duration: 1)
             guard let track = track else {fatalError("no track")}
-            musicTrack = MusicTrackNewMIDINoteEvent(track, time, &MIDInote)
+            MusicTrackNewMIDINoteEvent(track, time, &MIDInote)
             time += 1
         }
         
         var musicPlayer : MusicPlayer? = nil
-        var player = NewMusicPlayer(&musicPlayer)
-        player = MusicPlayerSetSequence(musicPlayer!, sequence)
-        player = MusicPlayerStart(musicPlayer!)
+        NewMusicPlayer(&musicPlayer)
+        MusicPlayerSetSequence(musicPlayer!, sequence)
+        MusicPlayerStart(musicPlayer!)
+        
     }
 }
 
