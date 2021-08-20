@@ -44,7 +44,7 @@ struct ContentView: View {
     }
     func noteNumber(tone: Tone, octave: Int) -> UInt8 {
         if Int(tone.number) > Int(Interval.octave.semitones) * octave {
-            return UInt8(Int(tone.number) - Int(Interval.octave.semitones) * octave)
+            return UInt8(Int(tone.number) + Int(Interval.octave.semitones) * octave)
         } else {
             return 0
         }
@@ -80,7 +80,7 @@ struct ContentView: View {
             VStack {
                 baseNotesMenu
                 ModesMenu
-                Text("\(scale.tones.reduce(into: "", {$0 += "\($1.name) "}))")
+                //Text("\(scale.tones.reduce(into: "", {$0 += "\($1.name) "}))")
                 trumpet
                 Button("play", action: {play()})
                     

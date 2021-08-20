@@ -30,6 +30,8 @@
 		B201CB7326D0524900CE86E1 /* TrumpetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB7226D0524900CE86E1 /* TrumpetView.swift */; };
 		B201CB7426D0524900CE86E1 /* TrumpetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB7226D0524900CE86E1 /* TrumpetView.swift */; };
 		B201CB7526D0550D00CE86E1 /* TrumpetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB7226D0524900CE86E1 /* TrumpetView.swift */; };
+		B201CB7726D0754900CE86E1 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB7626D0754900CE86E1 /* NoteView.swift */; };
+		B201CB7826D0754900CE86E1 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB7626D0754900CE86E1 /* NoteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,7 @@
 		B201CB6926D0101800CE86E1 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		B201CB6E26D032DA00CE86E1 /* Tone + play.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tone + play.swift"; sourceTree = "<group>"; };
 		B201CB7226D0524900CE86E1 /* TrumpetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrumpetView.swift; sourceTree = "<group>"; };
+		B201CB7626D0754900CE86E1 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,7 @@
 				B201CB2626CFBE9C00CE86E1 /* ContentView.swift */,
 				B201CB7226D0524900CE86E1 /* TrumpetView.swift */,
 				B201CB6226CFBEDE00CE86E1 /* Interval.swift */,
+				B201CB7626D0754900CE86E1 /* NoteView.swift */,
 				B201CB6926D0101800CE86E1 /* Mode.swift */,
 				B201CB6626CFEF7000CE86E1 /* Trumpet.swift */,
 				B201CB6E26D032DA00CE86E1 /* Tone + play.swift */,
@@ -335,6 +339,7 @@
 			files = (
 				B201CB5026CFBE9D00CE86E1 /* ContentView.swift in Sources */,
 				B201CB6A26D0101800CE86E1 /* Mode.swift in Sources */,
+				B201CB7726D0754900CE86E1 /* NoteView.swift in Sources */,
 				B201CB7326D0524900CE86E1 /* TrumpetView.swift in Sources */,
 				B201CB6726CFEF7000CE86E1 /* Trumpet.swift in Sources */,
 				B201CB6F26D032DA00CE86E1 /* Tone + play.swift in Sources */,
@@ -349,6 +354,7 @@
 			files = (
 				B201CB5126CFBE9D00CE86E1 /* ContentView.swift in Sources */,
 				B201CB6B26D0101800CE86E1 /* Mode.swift in Sources */,
+				B201CB7826D0754900CE86E1 /* NoteView.swift in Sources */,
 				B201CB7426D0524900CE86E1 /* TrumpetView.swift in Sources */,
 				B201CB6826CFEF7000CE86E1 /* Trumpet.swift in Sources */,
 				B201CB7026D032DA00CE86E1 /* Tone + play.swift in Sources */,

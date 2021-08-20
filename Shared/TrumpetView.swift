@@ -39,6 +39,8 @@ struct TrumpetView: View {
     var body: some View {
         VStack {
             Text("\(Tone(note: note, octave: 0).name)")
+                .minimumScaleFactor(0.01)
+                .frame(width: 30, height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         ZStack(alignment: Alignment(horizontal: .center, vertical: .center) ){
             if let buttons = note.trumpetButtons(mode) {
                 button(buttons.button3, buttons: buttons).offset(y: -20)
