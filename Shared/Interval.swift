@@ -108,12 +108,17 @@ public struct Mode {
     let name: String
     let intervals: [Interval]
     
-    static var major: Mode = Mode(name: "major", intervals: [.maj2nd, .maj2nd, .min2nd, .maj2nd, .maj2nd, .maj2nd, .min2nd])
-    static var minor: Mode = Mode(name: "minor", intervals: [.maj2nd, .min2nd, .maj2nd, .maj2nd, .min2nd, .maj2nd, .maj2nd])
+    static var ionian: Mode = Mode(name: "Ionian",      intervals: [.maj2nd, .maj2nd, .min2nd, .maj2nd, .maj2nd, .maj2nd, .min2nd])
+    static var dorian: Mode = Mode(name: "Dorian",      intervals: [.maj2nd, .min2nd, .maj2nd, .maj2nd, .maj2nd, .min2nd, .maj2nd])
+    static var phryg: Mode = Mode(name: "Phrygian",     intervals: [.min2nd, .maj2nd, .maj2nd, .maj2nd, .min2nd, .maj2nd, .maj2nd])
+    static var lydian: Mode = Mode(name: "Lydian",      intervals: [.maj2nd, .maj2nd, .maj2nd, .min2nd, .maj2nd, .maj2nd, .min2nd])
+    static var mixolid: Mode = Mode(name: "Mixolidian", intervals: [.maj2nd, .maj2nd, .min2nd, .maj2nd, .maj2nd, .min2nd, .maj2nd])
+    static var aeolian: Mode = Mode(name: "Aeolian",    intervals: [.maj2nd, .min2nd, .maj2nd, .maj2nd, .min2nd, .maj2nd, .maj2nd])
+    static var locrian: Mode = Mode(name: "Locrian",    intervals: [.min2nd, .maj2nd, .maj2nd, .min2nd, .maj2nd, .maj2nd, .maj2nd])
     static var blues: Mode = Mode(name: "blues", intervals: [.maj2nd, .min2nd, .min2nd, .min3rd, .maj2nd, .min3rd]) // MARK: not tested
 }
 
-var Modes : [Mode] = [.major, .minor, .blues]
+var Modes : [Mode] = [.ionian, .dorian, .phryg, .lydian, .mixolid, .aeolian, .locrian, .blues]
 
 public struct Scale {
     let base: UInt8

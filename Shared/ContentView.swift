@@ -8,15 +8,17 @@
 import SwiftUI
 import AudioToolbox
 
+
+
 struct ContentView: View {
     @State var baseNote: UInt8 = .C_
-    @State var mode: Mode = .major
-    @State var scale: Scale = Scale(base: .C_, mode: .major)
+    @State var mode: Mode = .ionian
+    @State var scale: Scale = Scale(base: .C_, mode: .ionian)
     @State var volume: Double = 64
     
     var baseNotesMenu: some View {
         MenuButton(
-            label: Text("Base \(ScaleNames[Int(baseNote)])"),
+            label: Text("Base \( scale.base.tone.name)"),
             content: {
                 ForEach(ScaleNames, id: \.self) {name in
                     Button("\(name)", action: {
@@ -52,7 +54,7 @@ struct ContentView: View {
             VStack {
                 baseNotesMenu
                 ModesMenu
-                Text("\(scale.tones.description)")
+                Text("\(scale.tones.reduce(into: "", {$0 += "\($1.name) "}))")
                 Button("play", action: {play()})
                     
                     .padding()
