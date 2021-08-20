@@ -52,7 +52,7 @@ private var TrumpetButtonsOrder: [TrumpetButtons] = [
 public enum TrumpetMode {
     case c
     case bFlat
-    var lowestNote: Int {
+    var lowestNote: UInt8 {
         switch self {
         case .c: return 42 + 12
         case .bFlat: return 40 + 12
@@ -60,13 +60,13 @@ public enum TrumpetMode {
     }
 }
 
-extension Int {
+extension UInt8 {
     public func trumpetButtons(_ mode: TrumpetMode) -> TrumpetButtons? {
         guard self >= mode.lowestNote else {
             return nil
         }
-        guard self < mode.lowestNote + TrumpetButtonsOrder.count else {
+        guard self < mode.lowestNote + UInt8(TrumpetButtonsOrder.count) else {
             return nil}
-        return TrumpetButtonsOrder[self - mode.lowestNote]
+        return TrumpetButtonsOrder[Int(self - mode.lowestNote)]
     }
 }

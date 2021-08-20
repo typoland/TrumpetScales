@@ -8,50 +8,50 @@
 import Foundation
 
 
-    public extension UInt8 {
-        static var C_ : UInt8 = 0
-        static      var C_Sharp : UInt8 = 1
-        static      var D_Flat : UInt8 = 1
-        static var D_: UInt8 = 2
-        static      var D_Sharp: UInt8 = 3
-        static      var E_Flat: UInt8 = 3
-        static var E_: UInt8 = 4
-        static var F_: UInt8 = 5
-        static      var F_Sharp: UInt8 = 6
-        static      var G_Flat: UInt8 = 6
-        static var G_: UInt8 = 7
-        static      var G_Sharp: UInt8 = 8
-        static      var A_Flat: UInt8 = 8
-        static var A_: UInt8 = 9
-        static      var A_Sharp: UInt8 = 10
-        static      var B_Flat: UInt8 = 10
-        static var B_: UInt8 = 11
-    }
+public extension UInt8 {
+    static let C_ : UInt8 = 0
+    static      let C_Sharp : UInt8 = 1
+    static      let D_Flat : UInt8 = 1
+    static let D_: UInt8 = 2
+    static      let D_Sharp: UInt8 = 3
+    static      let E_Flat: UInt8 = 3
+    static let E_: UInt8 = 4
+    static let F_: UInt8 = 5
+    static      let F_Sharp: UInt8 = 6
+    static      let G_Flat: UInt8 = 6
+    static let G_: UInt8 = 7
+    static      let G_Sharp: UInt8 = 8
+    static      let A_Flat: UInt8 = 8
+    static let A_: UInt8 = 9
+    static      let A_Sharp: UInt8 = 10
+    static      let B_Flat: UInt8 = 10
+    static let B_: UInt8 = 11
+}
 
 var ScaleNames: [String] {
     ["C" ,"C♯","D♭","D","D♯","E♭","E", "F","F♯","G♭","G","G♯","A♭","A","A♯","B♭","B"]
 }
 
-    var ScaleNotes: [String : UInt8] {
-        ["C" : .C_,
-         "C♯": .C_Sharp,
-         "D♭": .D_Flat,
-         "D" : .D_,
-         "D♯": .D_Sharp,
-         "E♭": .E_Flat,
-         "E" : .E_,
-         "F" : .F_,
-         "F♯": .F_Sharp,
-         "G♭": .G_Flat,
-         "G" : .G_,
-         "G♯": .G_Sharp,
-         "A♭": .A_Flat,
-         "A" : .A_,
-         "A♯": .A_Sharp,
-         "B♭": .B_Flat,
-         "B" : .B_
-        ]
-    }
+var ScaleNotes: [String : UInt8] {
+    ["C" : .C_,
+     "C♯": .C_Sharp,
+     "D♭": .D_Flat,
+     "D" : .D_,
+     "D♯": .D_Sharp,
+     "E♭": .E_Flat,
+     "E" : .E_,
+     "F" : .F_,
+     "F♯": .F_Sharp,
+     "G♭": .G_Flat,
+     "G" : .G_,
+     "G♯": .G_Sharp,
+     "A♭": .A_Flat,
+     "A" : .A_,
+     "A♯": .A_Sharp,
+     "B♭": .B_Flat,
+     "B" : .B_
+    ]
+}
 
 
 public enum Interval {
@@ -108,14 +108,14 @@ public struct Mode {
     let name: String
     let intervals: [Interval]
     
-    static var ionian: Mode = Mode(name: "Ionian",      intervals: [.maj2nd, .maj2nd, .min2nd, .maj2nd, .maj2nd, .maj2nd, .min2nd])
-    static var dorian: Mode = Mode(name: "Dorian",      intervals: [.maj2nd, .min2nd, .maj2nd, .maj2nd, .maj2nd, .min2nd, .maj2nd])
-    static var phryg: Mode = Mode(name: "Phrygian",     intervals: [.min2nd, .maj2nd, .maj2nd, .maj2nd, .min2nd, .maj2nd, .maj2nd])
-    static var lydian: Mode = Mode(name: "Lydian",      intervals: [.maj2nd, .maj2nd, .maj2nd, .min2nd, .maj2nd, .maj2nd, .min2nd])
-    static var mixolid: Mode = Mode(name: "Mixolidian", intervals: [.maj2nd, .maj2nd, .min2nd, .maj2nd, .maj2nd, .min2nd, .maj2nd])
-    static var aeolian: Mode = Mode(name: "Aeolian",    intervals: [.maj2nd, .min2nd, .maj2nd, .maj2nd, .min2nd, .maj2nd, .maj2nd])
-    static var locrian: Mode = Mode(name: "Locrian",    intervals: [.min2nd, .maj2nd, .maj2nd, .min2nd, .maj2nd, .maj2nd, .maj2nd])
-    static var blues: Mode = Mode(name: "blues", intervals: [.maj2nd, .min2nd, .min2nd, .min3rd, .maj2nd, .min3rd]) // MARK: not tested
+    static let ionian: Mode = Mode(name: "Ionian",      intervals: [.maj2nd, .maj2nd, .min2nd, .maj2nd, .maj2nd, .maj2nd, .min2nd])
+    static let dorian: Mode = Mode(name: "Dorian",      intervals: [.maj2nd, .min2nd, .maj2nd, .maj2nd, .maj2nd, .min2nd, .maj2nd])
+    static let phryg: Mode = Mode(name: "Phrygian",     intervals: [.min2nd, .maj2nd, .maj2nd, .maj2nd, .min2nd, .maj2nd, .maj2nd])
+    static let lydian: Mode = Mode(name: "Lydian",      intervals: [.maj2nd, .maj2nd, .maj2nd, .min2nd, .maj2nd, .maj2nd, .min2nd])
+    static let mixolid: Mode = Mode(name: "Mixolidian", intervals: [.maj2nd, .maj2nd, .min2nd, .maj2nd, .maj2nd, .min2nd, .maj2nd])
+    static let aeolian: Mode = Mode(name: "Aeolian",    intervals: [.maj2nd, .min2nd, .maj2nd, .maj2nd, .min2nd, .maj2nd, .maj2nd])
+    static let locrian: Mode = Mode(name: "Locrian",    intervals: [.min2nd, .maj2nd, .maj2nd, .min2nd, .maj2nd, .maj2nd, .maj2nd])
+    static let blues: Mode = Mode(name: "blues", intervals: [.maj2nd, .min2nd, .min2nd, .min3rd, .maj2nd, .min3rd]) // MARK: not tested
 }
 
 var Modes : [Mode] = [.ionian, .dorian, .phryg, .lydian, .mixolid, .aeolian, .locrian, .blues]
@@ -142,8 +142,8 @@ public struct Tone: Hashable {
     let octave: Int8
     
     init (note: UInt8, octave: Int8 = 3) {
-        self.note = note
-        self.octave = octave
+        self.note = note % Interval.octave.semitones
+        self.octave = octave + Int8(note / Interval.octave.semitones)
     }
     
     var name: String {
