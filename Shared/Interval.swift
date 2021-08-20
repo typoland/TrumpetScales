@@ -8,50 +8,50 @@
 import Foundation
 
 
-public extension Int {
-    static var C_ = 0
-    static      var C_Sharp = 1
-    static      var D_Flat = 1
-    static var D_ = 2
-    static      var D_Sharp = 3
-    static      var E_Flat = 3
-    static var E_ = 4
-    static var F_ = 5
-    static      var F_Sharp = 6
-    static      var G_Flat = 6
-    static var G_ = 7
-    static      var G_Sharp = 8
-    static      var A_Flat = 8
-    static var A_ = 9
-    static      var A_Sharp = 10
-    static      var B_Flat = 10
-    static var B_ = 11
-}
+    public extension UInt8 {
+        static var C_ : UInt8 = 0
+        static      var C_Sharp : UInt8 = 1
+        static      var D_Flat : UInt8 = 1
+        static var D_: UInt8 = 2
+        static      var D_Sharp: UInt8 = 3
+        static      var E_Flat: UInt8 = 3
+        static var E_: UInt8 = 4
+        static var F_: UInt8 = 5
+        static      var F_Sharp: UInt8 = 6
+        static      var G_Flat: UInt8 = 6
+        static var G_: UInt8 = 7
+        static      var G_Sharp: UInt8 = 8
+        static      var A_Flat: UInt8 = 8
+        static var A_: UInt8 = 9
+        static      var A_Sharp: UInt8 = 10
+        static      var B_Flat: UInt8 = 10
+        static var B_: UInt8 = 11
+    }
 
 var ScaleNames: [String] {
     ["C" ,"C♯","D♭","D","D♯","E♭","E", "F","F♯","G♭","G","G♯","A♭","A","A♯","B♭","B"]
 }
 
-var ScaleNotes: [String: Int] {
-    ["C" : .C_,
-     "C♯": .C_Sharp,
-     "D♭": .D_Flat,
-     "D" : .D_,
-     "D♯": .D_Sharp,
-     "E♭": .E_Flat,
-     "E" : .E_,
-     "F" : .F_,
-     "F♯": .F_Sharp,
-     "G♭": .G_Flat,
-     "G" : .G_,
-     "G♯": .G_Sharp,
-     "A♭": .A_Flat,
-     "A" : .A_,
-     "A♯": .A_Sharp,
-     "B♭": .B_Flat,
-     "B" : .B_
-    ]
-}
+    var ScaleNotes: [String : UInt8] {
+        ["C" : .C_,
+         "C♯": .C_Sharp,
+         "D♭": .D_Flat,
+         "D" : .D_,
+         "D♯": .D_Sharp,
+         "E♭": .E_Flat,
+         "E" : .E_,
+         "F" : .F_,
+         "F♯": .F_Sharp,
+         "G♭": .G_Flat,
+         "G" : .G_,
+         "G♯": .G_Sharp,
+         "A♭": .A_Flat,
+         "A" : .A_,
+         "A♯": .A_Sharp,
+         "B♭": .B_Flat,
+         "B" : .B_
+        ]
+    }
 
 
 public enum Interval {
@@ -70,7 +70,7 @@ public enum Interval {
     case maj7th
     case octave
     
-    var semitones: Int {
+    var semitones: UInt8 {
         switch self {
         case .unison: return 0
         case .min2nd: return 1
@@ -89,20 +89,17 @@ public enum Interval {
         }
     }
     
-    
-    
-    
-    public static func + (lhs: Interval, rhs: Interval) -> Int {
+    public static func + (lhs: Interval, rhs: Interval) -> UInt8 {
         lhs.semitones + rhs.semitones
     }
-    public static func + (lhs: Int, rhs:Interval) -> Int {
+    public static func + (lhs: UInt8, rhs:Interval) -> UInt8 {
         lhs + rhs.semitones
     }
     
     public static func + (lhs: Tone, rhs: Interval) -> Tone {
         let i = lhs.note + rhs
         let note =  i % Interval.octave.semitones
-        let octave = lhs.octave + i / Interval.octave.semitones
+        let octave = lhs.octave +  Int8 (i / Interval.octave.semitones)
         return Tone(note: note, octave: octave)
     }
 }
@@ -113,13 +110,13 @@ public struct Mode {
     
     static var major: Mode = Mode(name: "major", intervals: [.maj2nd, .maj2nd, .min2nd, .maj2nd, .maj2nd, .maj2nd, .min2nd])
     static var minor: Mode = Mode(name: "minor", intervals: [.maj2nd, .min2nd, .maj2nd, .maj2nd, .min2nd, .maj2nd, .maj2nd])
-    static var blues: Mode = Mode(name: "blues", intervals: [.maj2nd, .min2nd, .min2nd, .min3rd, .min3rd, .min3rd]) // MARK: not tested
+    static var blues: Mode = Mode(name: "blues", intervals: [.maj2nd, .min2nd, .min2nd, .min3rd, .maj2nd, .min3rd]) // MARK: not tested
 }
 
 var Modes : [Mode] = [.major, .minor, .blues]
 
 public struct Scale {
-    let base: Int
+    let base: UInt8
     let mode: Mode
     
     var tones: [Tone] {
@@ -136,22 +133,22 @@ public struct Scale {
 }
 
 public struct Tone: Hashable {
-    let note: Int
-    let octave: Int
+    let note: UInt8
+    let octave: Int8
     
-    init (note: Int, octave: Int = 3) {
+    init (note: UInt8, octave: Int8 = 3) {
         self.note = note
         self.octave = octave
     }
     
     var name: String {
-        let a = NotesDictionary.major.names[note]
-        let b = NotesDictionary.minor.names[note]
+        let a = NotesDictionary.major.names[Int(note)]
+        let b = NotesDictionary.minor.names[Int(note)]
         return a == b ? "\(a)" : "\(a)|\(b)"
     }
     
-    public var number: Int {
-        (octave + 2) * Interval.octave.semitones
+    public var number: UInt8 {
+        UInt8(UInt8(octave + 2) * Interval.octave.semitones) + note
     }
 }
 
@@ -162,15 +159,15 @@ extension Tone: CustomStringConvertible {
 }
 
 
-extension Int {
+extension UInt8 {
     var tone: Tone {
         let base = self
-        let r =  base % Interval.octave.semitones
+        let note =  base % Interval.octave.semitones
         // MARK: Not working ig octave is negative
-        let o = r >= 0 ? r : r - Interval.octave.semitones
-        let note = o
+        //let o = r >= 0 ? r : r - Interval.octave.semitones
+        //let note = o
      
-        let octave = base / Interval.octave.semitones
+        let octave =  Int8 (base / Interval.octave.semitones)
         return Tone(note: note, octave: octave - 2)
     }
 }
