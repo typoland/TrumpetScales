@@ -24,10 +24,10 @@ class Tests_macOS: XCTestCase {
     }
     
     func testMajorScale() throws {
-        let major = try ScaleMode(name: "major", type: .major, intervals: [.majorSecond, .majorSecond, .minorSecond, .majorSecond, .majorSecond, .majorSecond, .minorSecond])
-        let minor = try ScaleMode(name: "minor", type: .minor, intervals: [.majorSecond, .minorSecond, .majorSecond, .majorSecond, .minorSecond, .majorSecond, .majorSecond])
-        let aMinor = Scale(mode: minor, base: .A)
-        let cMajor = Scale(mode: major, base: .C)
+        let major = try ScaleMode(name: "major", type: .major, intervals: [.maj2nd, .maj2nd, .min2nd, .maj2nd, .maj2nd, .maj2nd, .min2nd])
+        let minor = try ScaleMode(name: "minor", type: .minor, intervals: [.maj2nd, .min2nd, .maj2nd, .maj2nd, .min2nd, .maj2nd, .maj2nd])
+        let aMinor = Scale(mode: minor, base: .A_)
+        let cMajor = Scale(mode: major, base: .C_)
         print (aMinor.tones)
         print (cMajor.tones)
         for i in 0...6 {
