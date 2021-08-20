@@ -20,6 +20,10 @@
 		B201CB6526CFCEA500CE86E1 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB6226CFBEDE00CE86E1 /* Interval.swift */; };
 		B201CB6726CFEF7000CE86E1 /* Trumpet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB6626CFEF7000CE86E1 /* Trumpet.swift */; };
 		B201CB6826CFEF7000CE86E1 /* Trumpet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB6626CFEF7000CE86E1 /* Trumpet.swift */; };
+		B201CB6A26D0101800CE86E1 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB6926D0101800CE86E1 /* Mode.swift */; };
+		B201CB6B26D0101800CE86E1 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB6926D0101800CE86E1 /* Mode.swift */; };
+		B201CB6C26D0114400CE86E1 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB6926D0101800CE86E1 /* Mode.swift */; };
+		B201CB6D26D01FC600CE86E1 /* Trumpet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB6626CFEF7000CE86E1 /* Trumpet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,7 @@
 		B201CB4D26CFBE9D00CE86E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B201CB6226CFBEDE00CE86E1 /* Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
 		B201CB6626CFEF7000CE86E1 /* Trumpet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trumpet.swift; sourceTree = "<group>"; };
+		B201CB6926D0101800CE86E1 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +113,7 @@
 				B201CB2526CFBE9C00CE86E1 /* MusicScalesApp.swift */,
 				B201CB2626CFBE9C00CE86E1 /* ContentView.swift */,
 				B201CB6226CFBEDE00CE86E1 /* Interval.swift */,
+				B201CB6926D0101800CE86E1 /* Mode.swift */,
 				B201CB6626CFEF7000CE86E1 /* Trumpet.swift */,
 				B201CB2726CFBE9D00CE86E1 /* Assets.xcassets */,
 			);
@@ -318,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B201CB5026CFBE9D00CE86E1 /* ContentView.swift in Sources */,
+				B201CB6A26D0101800CE86E1 /* Mode.swift in Sources */,
 				B201CB6726CFEF7000CE86E1 /* Trumpet.swift in Sources */,
 				B201CB4E26CFBE9D00CE86E1 /* MusicScalesApp.swift in Sources */,
 				B201CB6326CFBEDE00CE86E1 /* Interval.swift in Sources */,
@@ -329,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B201CB5126CFBE9D00CE86E1 /* ContentView.swift in Sources */,
+				B201CB6B26D0101800CE86E1 /* Mode.swift in Sources */,
 				B201CB6826CFEF7000CE86E1 /* Trumpet.swift in Sources */,
 				B201CB4F26CFBE9D00CE86E1 /* MusicScalesApp.swift in Sources */,
 				B201CB6426CFBEDE00CE86E1 /* Interval.swift in Sources */,
@@ -348,7 +356,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B201CB6526CFCEA500CE86E1 /* Interval.swift in Sources */,
+				B201CB6D26D01FC600CE86E1 /* Trumpet.swift in Sources */,
 				B201CB4C26CFBE9D00CE86E1 /* Tests_macOS.swift in Sources */,
+				B201CB6C26D0114400CE86E1 /* Mode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
