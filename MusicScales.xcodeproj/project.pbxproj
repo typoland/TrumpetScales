@@ -15,6 +15,11 @@
 		B201CB5126CFBE9D00CE86E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB2626CFBE9C00CE86E1 /* ContentView.swift */; };
 		B201CB5226CFBE9D00CE86E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B201CB2726CFBE9D00CE86E1 /* Assets.xcassets */; };
 		B201CB5326CFBE9D00CE86E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B201CB2726CFBE9D00CE86E1 /* Assets.xcassets */; };
+		B201CB6326CFBEDE00CE86E1 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB6226CFBEDE00CE86E1 /* Interval.swift */; };
+		B201CB6426CFBEDE00CE86E1 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB6226CFBEDE00CE86E1 /* Interval.swift */; };
+		B201CB6526CFCEA500CE86E1 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB6226CFBEDE00CE86E1 /* Interval.swift */; };
+		B201CB6726CFEF7000CE86E1 /* Trumpet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB6626CFEF7000CE86E1 /* Trumpet.swift */; };
+		B201CB6826CFEF7000CE86E1 /* Trumpet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB6626CFEF7000CE86E1 /* Trumpet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,8 @@
 		B201CB4726CFBE9D00CE86E1 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B201CB4B26CFBE9D00CE86E1 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		B201CB4D26CFBE9D00CE86E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B201CB6226CFBEDE00CE86E1 /* Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
+		B201CB6626CFEF7000CE86E1 /* Trumpet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trumpet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +107,8 @@
 			children = (
 				B201CB2526CFBE9C00CE86E1 /* MusicScalesApp.swift */,
 				B201CB2626CFBE9C00CE86E1 /* ContentView.swift */,
+				B201CB6226CFBEDE00CE86E1 /* Interval.swift */,
+				B201CB6626CFEF7000CE86E1 /* Trumpet.swift */,
 				B201CB2726CFBE9D00CE86E1 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -309,7 +318,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B201CB5026CFBE9D00CE86E1 /* ContentView.swift in Sources */,
+				B201CB6726CFEF7000CE86E1 /* Trumpet.swift in Sources */,
 				B201CB4E26CFBE9D00CE86E1 /* MusicScalesApp.swift in Sources */,
+				B201CB6326CFBEDE00CE86E1 /* Interval.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +329,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B201CB5126CFBE9D00CE86E1 /* ContentView.swift in Sources */,
+				B201CB6826CFEF7000CE86E1 /* Trumpet.swift in Sources */,
 				B201CB4F26CFBE9D00CE86E1 /* MusicScalesApp.swift in Sources */,
+				B201CB6426CFBEDE00CE86E1 /* Interval.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B201CB6526CFCEA500CE86E1 /* Interval.swift in Sources */,
 				B201CB4C26CFBE9D00CE86E1 /* Tests_macOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +405,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -408,6 +423,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -450,6 +466,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -460,6 +477,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};

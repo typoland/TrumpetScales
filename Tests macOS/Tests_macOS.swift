@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import MusicScales
 
 class Tests_macOS: XCTestCase {
 
@@ -21,7 +22,21 @@ class Tests_macOS: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
+    
+    func testMajorScale() throws {
+        let major = try ScaleMode(name: "major", type: .major, intervals: [.majorSecond, .majorSecond, .minorSecond, .majorSecond, .majorSecond, .majorSecond, .minorSecond])
+        let minor = try ScaleMode(name: "minor", type: .minor, intervals: [.majorSecond, .minorSecond, .majorSecond, .majorSecond, .minorSecond, .majorSecond, .majorSecond])
+        let aMinor = Scale(mode: minor, base: .A)
+        let cMajor = Scale(mode: major, base: .C)
+        print (aMinor.tones)
+        print (cMajor.tones)
+        for i in 0...6 {
+            let tone = (12*i).tone
+        print (tone.name, tone.octave)
+            print (tone.number)
+        }
+    }
+    
     func testExample() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
