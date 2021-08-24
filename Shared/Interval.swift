@@ -96,12 +96,7 @@ public enum Interval {
         lhs + rhs.semitones
     }
     
-    public static func + (lhs: Tone, rhs: Interval) -> Tone {
-        let i = lhs.note + rhs
-        let note =  i % Interval.octave.semitones
-        let octave = lhs.octave +  Int8 (i / Interval.octave.semitones)
-        return Tone(note: note, octave: octave)
-    }
+    
 }
 
 public struct Mode {
@@ -155,13 +150,32 @@ public struct Tone: Hashable {
     }
     
     var name: String {
-        let a = NotesDictionary.major.names[Int(note)]
-        let b = NotesDictionary.minor.names[Int(note)]
+        let a = NotesDictionary.majorScale.names[Int(note)]
+        let b = NotesDictionary.minorScale.names[Int(note)]
         return a == b ? "\(a)" : "\(a)|\(b)"
     }
     
-    public var number: UInt8 {
+    public var midiNoteNumber: UInt8 {
         UInt8(UInt8(octave + 2) * Interval.octave.semitones) + note
+    }
+    
+    public static func + (lhs: Tone, rhs: Interval) -> Tone {
+        let i = lhs.note + rhs
+        let note =  i % Interval.octave.semitones
+        let octave = lhs.octave +  Int8 (i / Interval.octave.semitones)
+        return Tone(note: note, octave: octave)
+    }
+    
+    public static func + (lhs: Tone, rhs: Int8) -> Tone {
+        let semitones = Int8(Interval.octave.semitones)
+        let i = Int8(lhs.note) + rhs
+        let note =  i % semitones
+        let octave = lhs.octave +  Int8 (i / semitones)
+        return Tone(note: note < 0 ? UInt8(note + semitones) : UInt8(note), octave: note < 0 ? octave-1 : octave)
+    }
+    
+    public static func - (lhs: Tone, rhs: Int8) -> Tone {
+        return lhs + -rhs
     }
 }
 
@@ -171,12 +185,11 @@ extension Tone: CustomStringConvertible {
     }
 }
 
-
 extension UInt8 {
     var tone: Tone {
         let base = self
         let note =  base % Interval.octave.semitones
-        // MARK: Not working ig octave is negative
+        // MARK: Not working if octave is negative
         //let o = r >= 0 ? r : r - Interval.octave.semitones
         //let note = o
      
@@ -184,18 +197,65 @@ extension UInt8 {
         return Tone(note: note, octave: octave - 2)
     }
 }
+struct LineOffset {
+    enum HalfTone {
+        case sharp
+        case flat
+        case none
+        var sign: String {
+            switch self {
+            case .sharp:
+                return "\u{E10E}"
+            case .flat:
+                return "\u{E11A}"
+            case .none:
+                return ""
+            }
+        }
+    }
+    var step: Int8
+    var mark: HalfTone
+}
 
+let noteNames = ["C", "D", "E", "F", "G", "A", "B"]
 
 public enum NotesDictionary {
-    case major
-    case minor
+    typealias LO = LineOffset
+    case majorScale
+    case minorScale
+    
     var names: [String] {
-        switch self {
-        case .major:
-            return ["C", "C♯", "D", "D♯", "E", "F", "F♯", "G", "G♯", "A", "A♯", "B"]
-        case .minor:
-            return ["C", "D♭", "D", "E♭", "E", "F", "G♭", "G", "A♭", "A", "B♭", "B"]
-            
+        LineSteps.map {noteNames[Int($0.step)]+$0.mark.sign }
+    }
+    
+    var LineSteps: [LineOffset] {
+        switch  self {
+        case .majorScale:
+            return [LO(step: 0, mark: .none),
+                    LO(step: 0, mark: .sharp),
+                    LO(step: 1, mark: .none),
+                    LO(step: 1, mark: .sharp),
+                    LO(step: 2, mark: .none),
+                    LO(step: 3, mark: .none),
+                    LO(step: 3, mark: .sharp),
+                    LO(step: 4, mark: .none),
+                    LO(step: 4, mark: .sharp),
+                    LO(step: 5, mark: .none),
+                    LO(step: 5, mark: .sharp),
+                    LO(step: 6, mark: .none)]
+        case .minorScale:
+            return [LO(step: 0, mark: .none),
+                    LO(step: 1, mark: .flat),
+                    LO(step: 1, mark: .none),
+                    LO(step: 2, mark: .flat),
+                    LO(step: 2, mark: .none),
+                    LO(step: 3, mark: .none),
+                    LO(step: 4, mark: .flat),
+                    LO(step: 4, mark: .none),
+                    LO(step: 5, mark: .flat),
+                    LO(step: 5, mark: .none),
+                    LO(step: 6, mark: .flat),
+                    LO(step: 6, mark: .none)]
         }
     }
 }

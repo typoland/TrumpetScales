@@ -11,40 +11,47 @@ import AudioToolbox
 struct ContentView: View {
     
     @State var baseNote: UInt8 = .C_
+    @State var scaleName: String = "C"
     @State var mode: Mode = .ionian
+    @State var modeName: String = Mode.ionian.name
     @State var scale: Scale = Scale(base: .C_, mode: .ionian)
-    @State var volume: Double = 64
+    @State var volume: Double = 100
     @State var octave: Int = 0
     @State var bFlatTrumpet: Bool = true
     
     var baseNotesMenu: some View {
-        MenuButton(
-            label: Text("Base \( scale.base.tone.name)"),
-            content: {
-                ForEach(ScaleNames, id: \.self) {name in
-                    Button("\(name)", action: {
-                        baseNote = ScaleNotes[name] ?? 0
-                        scale = Scale(base: baseNote, mode: mode)
-                        
-                    })
-                }
+        Picker("Base note", selection: $scaleName) {
+            ForEach(ScaleNames, id: \.self) {name in
+                Text("\(name)")
             }
-        )
+        }
+        
+        .frame(width: 70, height: 100)
+        .clipped()
+        .onChange(of: scaleName, perform: { scaleName in
+            baseNote = ScaleNotes[scaleName] ?? 0
+            scale = Scale(base: baseNote, mode: mode)
+        })
     }
     
     var ModesMenu: some View {
-        MenuButton("\(mode.name)") {
+        Picker("Mode", selection: $modeName) {
             ForEach(Modes, id:\.name) { mode in
-                Button("\(mode.name)", action: {
-                    self.mode = mode
-                    scale = Scale(base: baseNote, mode: mode)
-                })
+                Text("\(mode.name)")
             }
         }
+        .frame(width: 200, height: 100)
+        .clipped()
+        .onChange(of: modeName, perform: { modeName in
+            if let mode = Modes.first(where: {$0.name == modeName}) {
+                self.mode = mode
+                scale = Scale(base: baseNote, mode: mode)
+            }
+        })
     }
     func noteNumber(tone: Tone, octave: Int) -> UInt8 {
-        if Int(tone.number) > Int(Interval.octave.semitones) * octave {
-            return UInt8(Int(tone.number) + Int(Interval.octave.semitones) * octave)
+        if Int(tone.midiNoteNumber) > Int(Interval.octave.semitones) * octave {
+            return UInt8(Int(tone.midiNoteNumber) + Int(Interval.octave.semitones) * octave)
         } else {
             return 0
         }
@@ -68,7 +75,7 @@ struct ContentView: View {
         })
     }
     var body: some View {
-        HStack {
+        //HStack {
             VStack{
                 bflatChooser
                 octaveStepper
@@ -76,17 +83,19 @@ struct ContentView: View {
                 //                    .rotationEffect(.degrees(-90.0), anchor: .topLeading)
                 //                    .frame(width: 20)
                 //                    .offset(y: 100)
-            }
-            VStack {
+            //}
+            //VStack {
+                HStack {
                 baseNotesMenu
                 ModesMenu
+                }
                 //Text("\(scale.tones.reduce(into: "", {$0 += "\($1.name) "}))")
                 trumpet
                 Button("play", action: {play()})
                     
                     .padding()
             }
-        }
+        //}
     }
     
     func play() {

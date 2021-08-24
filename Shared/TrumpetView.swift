@@ -30,7 +30,7 @@ struct TrumpetView: View {
             if full {
                 Circle().fill(buttons.color)
             }
-            Circle().stroke(Color.white, lineWidth: 2.0)
+            Circle().stroke( lineWidth: 2.0)
         }.frame(width: 14, height: 14, alignment: .top)
         
     }
@@ -41,15 +41,16 @@ struct TrumpetView: View {
             Text("\(Tone(note: note, octave: 0).name)")
                 .minimumScaleFactor(0.01)
                 .frame(width: 30, height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-        ZStack(alignment: Alignment(horizontal: .center, vertical: .center) ){
-            if let buttons = note.trumpetButtons(mode) {
-                button(buttons.button3, buttons: buttons).offset(y: -20)
-                button(buttons.button2, buttons: buttons).offset(y: 0)
-                button(buttons.button1, buttons: buttons).offset(y: 20)
-            } else {
-                Rectangle()
-            }
-        }.frame(width: 16, height: 60, alignment: .center)
+            NoteView(number: note, scaleType: .majorScale)
+            ZStack(alignment: Alignment(horizontal: .center, vertical: .center) ){
+                if let buttons = note.trumpetButtons(mode) {
+                    button(buttons.button3, buttons: buttons).offset(y: -20)
+                    button(buttons.button2, buttons: buttons).offset(y: 0)
+                    button(buttons.button1, buttons: buttons).offset(y: 20)
+                } else {
+                    Rectangle()
+                }
+            }.frame(width: 16, height: 60, alignment: .center)
         }
         
     }

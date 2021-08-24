@@ -22,5 +22,9 @@
 	<string>1</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>emmentaler.ttf</string>
+	</array>
 </dict>
 </plist>

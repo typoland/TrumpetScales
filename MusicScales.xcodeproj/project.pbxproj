@@ -32,6 +32,9 @@
 		B201CB7526D0550D00CE86E1 /* TrumpetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB7226D0524900CE86E1 /* TrumpetView.swift */; };
 		B201CB7726D0754900CE86E1 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB7626D0754900CE86E1 /* NoteView.swift */; };
 		B201CB7826D0754900CE86E1 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB7626D0754900CE86E1 /* NoteView.swift */; };
+		B2E122A026D0F33200C29F89 /* emmentaler.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2E1229F26D0F33200C29F89 /* emmentaler.ttf */; };
+		B2E122A126D0F33200C29F89 /* emmentaler.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2E1229F26D0F33200C29F89 /* emmentaler.ttf */; };
+		B2E122A226D1374400C29F89 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB7626D0754900CE86E1 /* NoteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,7 @@
 		B201CB6E26D032DA00CE86E1 /* Tone + play.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tone + play.swift"; sourceTree = "<group>"; };
 		B201CB7226D0524900CE86E1 /* TrumpetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrumpetView.swift; sourceTree = "<group>"; };
 		B201CB7626D0754900CE86E1 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
+		B2E1229F26D0F33200C29F89 /* emmentaler.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = emmentaler.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 		B201CB1F26CFBE9C00CE86E1 = {
 			isa = PBXGroup;
 			children = (
+				B2E1229E26D0F31100C29F89 /* Fonts */,
 				B201CB2426CFBE9C00CE86E1 /* Shared */,
 				B201CB2E26CFBE9D00CE86E1 /* iOS */,
 				B201CB3526CFBE9D00CE86E1 /* macOS */,
@@ -178,6 +183,14 @@
 				B201CB4D26CFBE9D00CE86E1 /* Info.plist */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		B2E1229E26D0F31100C29F89 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B2E1229F26D0F33200C29F89 /* emmentaler.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +317,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2E122A026D0F33200C29F89 /* emmentaler.ttf in Resources */,
 				B201CB5226CFBE9D00CE86E1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2E122A126D0F33200C29F89 /* emmentaler.ttf in Resources */,
 				B201CB5326CFBE9D00CE86E1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,6 +395,7 @@
 				B201CB7526D0550D00CE86E1 /* TrumpetView.swift in Sources */,
 				B201CB4C26CFBE9D00CE86E1 /* Tests_macOS.swift in Sources */,
 				B201CB6C26D0114400CE86E1 /* Mode.swift in Sources */,
+				B2E122A226D1374400C29F89 /* NoteView.swift in Sources */,
 				B201CB7126D0338900CE86E1 /* Tone + play.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
