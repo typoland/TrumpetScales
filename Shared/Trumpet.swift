@@ -11,9 +11,9 @@ public struct TrumpetButtons {
     var button1: Bool
     var button2: Bool
     var button3: Bool
-    
     var step: Int
 }
+
 typealias TP = TrumpetButtons
 private var TrumpetButtonsOrder: [TrumpetButtons] = [
     TP(button1: true,  button2: true,  button3: true,  step: 1), //F#

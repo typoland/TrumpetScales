@@ -26,7 +26,7 @@ struct ContentView: View {
             }
         }
         
-        .frame(width: 100, height: 100)
+        .frame(width: 100, height: 140)
         .clipped()
         .onChange(of: scaleName, perform: { scaleName in
             baseNote = ScaleNotes[scaleName] ?? 0
@@ -40,7 +40,7 @@ struct ContentView: View {
                 Text("\(mode.name)")
             }
         }
-        .frame(width: 180, height: 100)
+        .frame(width: 180, height: 140)
         .clipped()
         .onChange(of: modeName, perform: { modeName in
             if let mode = Modes.first(where: {$0.name == modeName}) {
@@ -49,6 +49,7 @@ struct ContentView: View {
             }
         })
     }
+    
     func noteNumber(tone: Tone, octave: Int) -> UInt8 {
         if Int(tone.midiNoteNumber) > Int(Interval.octave.semitones) * octave {
             return UInt8(Int(tone.midiNoteNumber) + Int(Interval.octave.semitones) * octave)
@@ -56,6 +57,7 @@ struct ContentView: View {
             return 0
         }
     }
+    
     var trumpet: some View {
         HStack {
             ForEach(scale.tones, id:\.self) {tone in
@@ -69,33 +71,31 @@ struct ContentView: View {
         Stepper("octave \(octave)", value: $octave, in: -1...5)
     }
     
-    var bflatChooser: some View {
+    var bFlatChooser: some View {
         Toggle(isOn: $bFlatTrumpet, label: {
             Text("trumpet B♭")
         })
     }
     var body: some View {
         //HStack {
-            VStack{
-                bflatChooser
-                octaveStepper
-                Slider( value: $volume, in: 0...127)
-                //                    .rotationEffect(.degrees(-90.0), anchor: .topLeading)
-                //                    .frame(width: 20)
-                //                    .offset(y: 100)
-            //}
-            //VStack {
-                HStack {
+        VStack{
+
+            HStack {
                 baseNotesMenu
                 ModesMenu
-                }
-                //Text("\(scale.tones.reduce(into: "", {$0 += "\($1.name) "}))")
-                trumpet
-                Button("play", action: {play()})
-                    
-                    .padding()
             }
-        //}
+
+            Spacer()
+            trumpet
+            Spacer()
+            bFlatChooser
+                .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+            octaveStepper
+                .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+            Button("play", action: {play()})
+                .padding(25)
+        }
+
     }
     
     func play() {

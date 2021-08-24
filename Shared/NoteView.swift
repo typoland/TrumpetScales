@@ -18,12 +18,12 @@ extension UInt8 {
         let firstLineTone = Tone(note: .C_, octave: 4)
         let thisTone = Tone(note: self, octave: -2)
         let octaveInterval =  thisTone.octave - firstLineTone.octave
-        print ("\t",firstLineTone.name, thisTone.name, octaveInterval)
+//        print ("\t",firstLineTone.name, thisTone.name, octaveInterval)
 //        let gridTone = firstLineNote + interval
 //        let octaveInterval = gridTone.octave - firstLineNote.octave
         let baseOffset = scaleType.LineSteps[Int(firstLineTone.note)]
         let lineOffset = scaleType.LineSteps[Int(thisTone.note)]
-        print ("\t",baseOffset.step, lineOffset.step)
+//        print ("\t",baseOffset.step, lineOffset.step)
         let gridLines = octaveInterval * 7  + baseOffset.step + lineOffset.step
         //print (lineOffset.step, gridLines, lineOffset.mark.sign)
 //        return (0, .none)
@@ -33,11 +33,15 @@ extension UInt8 {
 
 struct NoteView: View {
     var number: UInt8
+    var bFlat: Bool
     var scaleType: NotesDictionary
-    let lineGap: CGFloat = 3
+    let lineGap: CGFloat = 5
     
     func realOffset(from: Int8) -> CGFloat {
         return  -4*lineGap + CGFloat(from) * lineGap
+    }
+    var bFlatOffset: UInt8 {
+        return bFlat ? 2 : 0
     }
     
     var body: some View {
@@ -48,22 +52,20 @@ struct NoteView: View {
                     .offset(y: CGFloat(idx)*lineGap*2)
                     .foregroundColor(.primary)
             }
-//        Text("\(.keyC)\(.keyG)\(.note)").font(Font.custom("emmentaler", size: 32))
-//            .frame(height: 70)
-            //.background(Color.gray)
-        
-            let (offset, sign) = number.noteGridLine(scaleType: scaleType)
+
+            
+            let (offset, sign) = (number + bFlatOffset).noteGridLine(scaleType: scaleType)
            // Text("\(offset)")//.border(Color.blue)
             if offset < -6 {
                 ForEach(((offset+1)/2 ... -3), id:\.self) { idx in
-                    Rectangle().frame(width: 20, height: 1, alignment: .center)
+                    Rectangle().frame(width: 17, height: 1, alignment: .center)
                         .offset(y: -CGFloat(idx)*lineGap*2+lineGap*4)
                         .foregroundColor(.primary)
                 }
             }
             if offset > 4 {
                 ForEach((2 ... (offset-1)/2), id:\.self) { idx in
-                    Rectangle().frame(width: 20, height: 1, alignment: .center)
+                    Rectangle().frame(width: 17, height: 1, alignment: .center)
                         .offset(y: -CGFloat(idx)*lineGap*2+lineGap*2)
                         .foregroundColor(.primary)
                 }
@@ -73,13 +75,15 @@ struct NoteView: View {
                 .offset(y: -realOffset(from: offset))
                 //.border(Color.red)
         }
-        .offset(y: -15)
+        .offset(y: -25)
         //.scaleEffect(0.75)
     }
 }
 
 struct NoteView_Previews: PreviewProvider {
     static var previews: some View {
-        NoteView(number: Tone(note: .C_, octave: 3).midiNoteNumber, scaleType: .majorScale)
+        NoteView(number: Tone(note: .C_, octave: 3).midiNoteNumber,
+                 bFlat: true,
+                 scaleType: .majorScale)
     }
 }
