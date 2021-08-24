@@ -34,7 +34,7 @@ extension UInt8 {
 struct NoteView: View {
     var number: UInt8
     var scaleType: NotesDictionary
-    let lineGap: CGFloat = 4
+    let lineGap: CGFloat = 3
     
     func realOffset(from: Int8) -> CGFloat {
         return  -4*lineGap + CGFloat(from) * lineGap
@@ -58,16 +58,14 @@ struct NoteView: View {
                 ForEach(((offset+1)/2 ... -3), id:\.self) { idx in
                     Rectangle().frame(width: 20, height: 1, alignment: .center)
                         .offset(y: -CGFloat(idx)*lineGap*2+lineGap*4)
-                        //.offset(y: ((-CGFloat(idx)+7)*lineGap))
                         .foregroundColor(.primary)
                 }
             }
             if offset > 4 {
                 ForEach((2 ... (offset-1)/2), id:\.self) { idx in
-                    Rectangle().frame(width: 20, height: 2, alignment: .center)
+                    Rectangle().frame(width: 20, height: 1, alignment: .center)
                         .offset(y: -CGFloat(idx)*lineGap*2+lineGap*2)
-                        //.offset(y: ((-CGFloat(idx)+7)*lineGap))
-                        .foregroundColor(.blue)
+                        .foregroundColor(.primary)
                 }
             }
             Text("\(sign.sign)\(.note)")

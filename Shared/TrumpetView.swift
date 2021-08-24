@@ -15,6 +15,7 @@ extension TrumpetButtons {
         case 3: return .init(hue: 0.70, saturation: 0.7, brightness: 0.8)
         case 4: return .init(hue: 0.85, saturation: 0.8, brightness: 0.9)
         case 5: return .init(hue: 1, saturation: 0.9, brightness: 1.0)
+        case 6: return .init(hue: 0.1, saturation: 1, brightness: 1)
         default: return .init(hue: 0.10, saturation: 0.3, brightness: 0.4)
         }
     }

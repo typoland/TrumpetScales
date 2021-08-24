@@ -26,7 +26,7 @@ struct ContentView: View {
             }
         }
         
-        .frame(width: 70, height: 100)
+        .frame(width: 100, height: 100)
         .clipped()
         .onChange(of: scaleName, perform: { scaleName in
             baseNote = ScaleNotes[scaleName] ?? 0
@@ -40,7 +40,7 @@ struct ContentView: View {
                 Text("\(mode.name)")
             }
         }
-        .frame(width: 200, height: 100)
+        .frame(width: 180, height: 100)
         .clipped()
         .onChange(of: modeName, perform: { modeName in
             if let mode = Modes.first(where: {$0.name == modeName}) {

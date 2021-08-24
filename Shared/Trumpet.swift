@@ -45,7 +45,11 @@ private var TrumpetButtonsOrder: [TrumpetButtons] = [
     
     TP(button1: true,  button2: false, button3: false, step: 5), //F
     TP(button1: false, button2: true,  button3: false, step: 5), //F#
-    TP(button1: false, button2: false, button3: false, step: 5)  //G
+    TP(button1: false, button2: false, button3: false, step: 5),  //G
+    
+    TP(button1: true,  button2: false, button3: false, step: 6), //G#
+    TP(button1: true,  button2: true,  button3: false, step: 6), //A
+    TP(button1: false, button2: false, button3: false, step: 6), //A#
 ]
 
 
