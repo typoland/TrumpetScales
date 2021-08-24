@@ -26,6 +26,24 @@
 		B201CB7526D0550D00CE86E1 /* TrumpetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB7226D0524900CE86E1 /* TrumpetView.swift */; };
 		B201CB7726D0754900CE86E1 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB7626D0754900CE86E1 /* NoteView.swift */; };
 		B201CB7826D0754900CE86E1 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB7626D0754900CE86E1 /* NoteView.swift */; };
+		B235257926D590F800102F99 /* Tone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235257826D590F800102F99 /* Tone.swift */; };
+		B235257A26D5910900102F99 /* Tone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235257826D590F800102F99 /* Tone.swift */; };
+		B235257B26D5910E00102F99 /* Tone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235257826D590F800102F99 /* Tone.swift */; };
+		B235257D26D5915700102F99 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235257C26D5915700102F99 /* Mode.swift */; };
+		B235257E26D5916200102F99 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235257C26D5915700102F99 /* Mode.swift */; };
+		B235257F26D5916300102F99 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235257C26D5915700102F99 /* Mode.swift */; };
+		B235258126D5918B00102F99 /* HalfTone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235258026D5918B00102F99 /* HalfTone.swift */; };
+		B235258226D5919100102F99 /* HalfTone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235258026D5918B00102F99 /* HalfTone.swift */; };
+		B235258326D5919200102F99 /* HalfTone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235258026D5918B00102F99 /* HalfTone.swift */; };
+		B235258526D591C000102F99 /* ScaleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235258426D591C000102F99 /* ScaleType.swift */; };
+		B235258626D591C600102F99 /* ScaleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235258426D591C000102F99 /* ScaleType.swift */; };
+		B235258726D591C700102F99 /* ScaleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235258426D591C000102F99 /* ScaleType.swift */; };
+		B235258926D591ED00102F99 /* LineOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235258826D591ED00102F99 /* LineOffset.swift */; };
+		B235258A26D591F400102F99 /* LineOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235258826D591ED00102F99 /* LineOffset.swift */; };
+		B235258B26D591F500102F99 /* LineOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235258826D591ED00102F99 /* LineOffset.swift */; };
+		B235258D26D5926600102F99 /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235258C26D5926600102F99 /* Scale.swift */; };
+		B235258E26D5926E00102F99 /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235258C26D5926600102F99 /* Scale.swift */; };
+		B235258F26D5926F00102F99 /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235258C26D5926600102F99 /* Scale.swift */; };
 		B2E122A026D0F33200C29F89 /* emmentaler.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2E1229F26D0F33200C29F89 /* emmentaler.ttf */; };
 		B2E122A126D0F33200C29F89 /* emmentaler.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2E1229F26D0F33200C29F89 /* emmentaler.ttf */; };
 		B2E122A226D1374400C29F89 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201CB7626D0754900CE86E1 /* NoteView.swift */; };
@@ -67,6 +85,12 @@
 		B201CB6626CFEF7000CE86E1 /* Trumpet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trumpet.swift; sourceTree = "<group>"; };
 		B201CB7226D0524900CE86E1 /* TrumpetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrumpetView.swift; sourceTree = "<group>"; };
 		B201CB7626D0754900CE86E1 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
+		B235257826D590F800102F99 /* Tone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tone.swift; sourceTree = "<group>"; };
+		B235257C26D5915700102F99 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
+		B235258026D5918B00102F99 /* HalfTone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfTone.swift; sourceTree = "<group>"; };
+		B235258426D591C000102F99 /* ScaleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleType.swift; sourceTree = "<group>"; };
+		B235258826D591ED00102F99 /* LineOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineOffset.swift; sourceTree = "<group>"; };
+		B235258C26D5926600102F99 /* Scale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scale.swift; sourceTree = "<group>"; };
 		B2E1229F26D0F33200C29F89 /* emmentaler.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = emmentaler.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +146,12 @@
 				B201CB2626CFBE9C00CE86E1 /* ContentView.swift */,
 				B201CB7226D0524900CE86E1 /* TrumpetView.swift */,
 				B201CB6226CFBEDE00CE86E1 /* Interval.swift */,
+				B235258C26D5926600102F99 /* Scale.swift */,
+				B235258826D591ED00102F99 /* LineOffset.swift */,
+				B235258426D591C000102F99 /* ScaleType.swift */,
+				B235258026D5918B00102F99 /* HalfTone.swift */,
+				B235257C26D5915700102F99 /* Mode.swift */,
+				B235257826D590F800102F99 /* Tone.swift */,
 				B201CB7626D0754900CE86E1 /* NoteView.swift */,
 				B201CB6626CFEF7000CE86E1 /* Trumpet.swift */,
 				B201CB2726CFBE9D00CE86E1 /* Assets.xcassets */,
@@ -344,9 +374,15 @@
 			files = (
 				B201CB5026CFBE9D00CE86E1 /* ContentView.swift in Sources */,
 				B201CB7726D0754900CE86E1 /* NoteView.swift in Sources */,
+				B235258126D5918B00102F99 /* HalfTone.swift in Sources */,
+				B235257D26D5915700102F99 /* Mode.swift in Sources */,
+				B235258526D591C000102F99 /* ScaleType.swift in Sources */,
 				B201CB7326D0524900CE86E1 /* TrumpetView.swift in Sources */,
 				B201CB6726CFEF7000CE86E1 /* Trumpet.swift in Sources */,
+				B235258926D591ED00102F99 /* LineOffset.swift in Sources */,
+				B235257926D590F800102F99 /* Tone.swift in Sources */,
 				B201CB4E26CFBE9D00CE86E1 /* MusicScalesApp.swift in Sources */,
+				B235258D26D5926600102F99 /* Scale.swift in Sources */,
 				B201CB6326CFBEDE00CE86E1 /* Interval.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,9 +393,15 @@
 			files = (
 				B201CB5126CFBE9D00CE86E1 /* ContentView.swift in Sources */,
 				B201CB7826D0754900CE86E1 /* NoteView.swift in Sources */,
+				B235258226D5919100102F99 /* HalfTone.swift in Sources */,
+				B235257E26D5916200102F99 /* Mode.swift in Sources */,
+				B235258626D591C600102F99 /* ScaleType.swift in Sources */,
 				B201CB7426D0524900CE86E1 /* TrumpetView.swift in Sources */,
 				B201CB6826CFEF7000CE86E1 /* Trumpet.swift in Sources */,
+				B235258A26D591F400102F99 /* LineOffset.swift in Sources */,
+				B235257A26D5910900102F99 /* Tone.swift in Sources */,
 				B201CB4F26CFBE9D00CE86E1 /* MusicScalesApp.swift in Sources */,
+				B235258E26D5926E00102F99 /* Scale.swift in Sources */,
 				B201CB6426CFBEDE00CE86E1 /* Interval.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,10 +419,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B201CB6526CFCEA500CE86E1 /* Interval.swift in Sources */,
+				B235258726D591C700102F99 /* ScaleType.swift in Sources */,
+				B235258B26D591F500102F99 /* LineOffset.swift in Sources */,
 				B201CB6D26D01FC600CE86E1 /* Trumpet.swift in Sources */,
+				B235258326D5919200102F99 /* HalfTone.swift in Sources */,
 				B201CB7526D0550D00CE86E1 /* TrumpetView.swift in Sources */,
+				B235257B26D5910E00102F99 /* Tone.swift in Sources */,
+				B235258F26D5926F00102F99 /* Scale.swift in Sources */,
 				B201CB4C26CFBE9D00CE86E1 /* Tests_macOS.swift in Sources */,
 				B2E122A226D1374400C29F89 /* NoteView.swift in Sources */,
+				B235257F26D5916300102F99 /* Mode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

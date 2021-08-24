@@ -54,7 +54,6 @@ struct NoteView: View {
                     
             }
 
-            
             let (offset, sign) = (number + bFlatOffset).noteGridLine(scaleType: scaleType)
            // Text("\(offset)")//.border(Color.blue)
             if offset < -6 {
@@ -72,13 +71,11 @@ struct NoteView: View {
                 }
             }
             Text("\(sign.sign?.description ?? "")\(.note)")
-                .font(Font.custom("emmentaler", size: lineGap*8))
+                .font(Font.custom("emmentaler", size: lineGap*6)) // 8 for MacOS and simulators
                 .offset(y: -realOffset(from: offset))
-                //.border(Color.red)
         }
         .frame(width:30)
         .offset(y: -25)
-        //.scaleEffect(0.75)
     }
 }
 
