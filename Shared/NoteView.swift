@@ -14,7 +14,7 @@ extension String {
 
 
 extension UInt8 {
-    func noteGridLine(scaleType: NotesDictionary) -> (Int8, LineOffset.HalfTone) {
+    func noteGridLine(scaleType: ScaleType) -> (Int8, HalfTone) {
         let firstLineTone = Tone(note: .C_, octave: 4)
         let thisTone = Tone(note: self, octave: -2)
         let octaveInterval =  thisTone.octave - firstLineTone.octave
@@ -34,7 +34,7 @@ extension UInt8 {
 struct NoteView: View {
     var number: UInt8
     var bFlat: Bool
-    var scaleType: NotesDictionary
+    var scaleType: ScaleType
     let lineGap: CGFloat = 5
     
     func realOffset(from: Int8) -> CGFloat {
@@ -48,9 +48,10 @@ struct NoteView: View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .center))
        {
             ForEach((0...4), id:\.self) { idx in
-                Rectangle().frame(width: 30, height: 1, alignment: .center)
+                Rectangle().frame(width: 70, height: 1, alignment: .center)
                     .offset(y: CGFloat(idx)*lineGap*2)
                     .foregroundColor(.primary)
+                    
             }
 
             
@@ -70,11 +71,12 @@ struct NoteView: View {
                         .foregroundColor(.primary)
                 }
             }
-            Text("\(sign.sign)\(.note)")
+            Text("\(sign.sign?.description ?? "")\(.note)")
                 .font(Font.custom("emmentaler", size: lineGap*8))
                 .offset(y: -realOffset(from: offset))
                 //.border(Color.red)
         }
+        .frame(width:30)
         .offset(y: -25)
         //.scaleEffect(0.75)
     }

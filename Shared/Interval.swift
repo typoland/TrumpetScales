@@ -150,9 +150,9 @@ public struct Tone: Hashable {
     }
     
     var name: String {
-        let a = NotesDictionary.majorScale.names[Int(note)]
-        let b = NotesDictionary.minorScale.names[Int(note)]
-        return a == b ? "\(a)" : "\(a)|\(b)"
+        let a = ScaleType.majorScale.names[Int(note)]
+        let b = ScaleType.minorScale.names[Int(note)]
+        return a == b ? "\(a)" : "\(a) \(b)"
     }
     
     public var midiNoteNumber: UInt8 {
@@ -197,35 +197,51 @@ extension UInt8 {
         return Tone(note: note, octave: octave - 2)
     }
 }
-struct LineOffset {
-    enum HalfTone {
-        case sharp
-        case flat
-        case none
-        var sign: String {
-            switch self {
-            case .sharp:
-                return "\u{E10E}"
-            case .flat:
-                return "\u{E11A}"
-            case .none:
-                return ""
-            }
+enum HalfTone {
+    case sharp
+    case flat
+    case none
+    var text: String {
+        switch self {
+        case .sharp:
+            return "♯"
+        case .flat:
+            return "♭"
+        default:
+            return ""
         }
     }
+    var sign: Character? {
+        switch self {
+        case .sharp:
+            return "\u{E10E}"
+        case .flat:
+            return "\u{E11A}"
+        case .none:
+            return nil
+        }
+    }
+}
+struct LineOffset {
+    
     var step: Int8
     var mark: HalfTone
 }
 
 let noteNames = ["C", "D", "E", "F", "G", "A", "B"]
 
-public enum NotesDictionary {
+public enum ScaleType {
     typealias LO = LineOffset
     case majorScale
     case minorScale
     
+    init (name: String) {
+        self = name.contains(HalfTone.flat.text) ?
+            .minorScale : .majorScale
+    }
+    
     var names: [String] {
-        LineSteps.map {noteNames[Int($0.step)]+$0.mark.sign }
+        LineSteps.map {noteNames[Int($0.step)] + "\($0.mark.text)" }
     }
     
     var LineSteps: [LineOffset] {

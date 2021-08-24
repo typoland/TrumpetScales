@@ -24,10 +24,11 @@ extension TrumpetButtons {
 struct TrumpetView: View {
     var mode: TrumpetMode
     var note: UInt8
+    var scaleType: ScaleType
     var buttonSize: CGFloat = 25
     var buttonGap: CGFloat = 6
     
-    func button(_ full:Bool, buttons: TrumpetButtons) -> some View {
+    func button(_ full: Bool, buttons: TrumpetButtons) -> some View {
         
         ZStack{
             if full {
@@ -43,11 +44,11 @@ struct TrumpetView: View {
         VStack {
             Text("\(Tone(note: note, octave: 0).name)").font(.largeTitle)
                 .minimumScaleFactor(0.01)
-                .frame(width: 35, height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: 35, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             
             NoteView(number: note,
                      bFlat: mode == .bFlat,
-                     scaleType: .majorScale)
+                     scaleType: scaleType)
             
             ZStack(alignment: Alignment(horizontal: .center, vertical: .center) ){
                 if let buttons = note.trumpetButtons(mode) {
@@ -65,6 +66,6 @@ struct TrumpetView: View {
 
 struct TrumpetView_Previews: PreviewProvider {
     static var previews: some View {
-        TrumpetView(mode: .bFlat, note: 61)
+        TrumpetView(mode: .bFlat, note: 61, scaleType: .minorScale)
     }
 }

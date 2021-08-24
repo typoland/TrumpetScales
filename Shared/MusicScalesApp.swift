@@ -11,7 +11,7 @@ import SwiftUI
 struct MusicScalesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().padding(20)
         }
     }
 }

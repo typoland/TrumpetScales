@@ -18,6 +18,7 @@ struct ContentView: View {
     @State var volume: Double = 100
     @State var octave: Int = 0
     @State var bFlatTrumpet: Bool = true
+    @State var type: ScaleType = .majorScale
     
     var baseNotesMenu: some View {
         Picker("Base note", selection: $scaleName) {
@@ -31,6 +32,7 @@ struct ContentView: View {
         .onChange(of: scaleName, perform: { scaleName in
             baseNote = ScaleNotes[scaleName] ?? 0
             scale = Scale(base: baseNote, mode: mode)
+            type = ScaleType(name: scaleName)
         })
     }
     
@@ -62,7 +64,9 @@ struct ContentView: View {
         HStack {
             ForEach(scale.tones, id:\.self) {tone in
                 TrumpetView(mode: bFlatTrumpet ? .bFlat : .c,
-                            note: noteNumber(tone: tone, octave: octave))
+                            note: noteNumber(tone: tone,
+                                             octave: octave),
+                            scaleType: type)
             }
         }
     }
