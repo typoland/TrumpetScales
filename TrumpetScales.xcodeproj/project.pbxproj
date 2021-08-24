@@ -70,9 +70,9 @@
 		B201CB2526CFBE9C00CE86E1 /* MusicScalesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicScalesApp.swift; sourceTree = "<group>"; };
 		B201CB2626CFBE9C00CE86E1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B201CB2726CFBE9D00CE86E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B201CB2C26CFBE9D00CE86E1 /* MusicScales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicScales.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B201CB2C26CFBE9D00CE86E1 /* TrumpetScales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrumpetScales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B201CB2F26CFBE9D00CE86E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B201CB3426CFBE9D00CE86E1 /* MusicScales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicScales.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B201CB3426CFBE9D00CE86E1 /* TrumpetScales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrumpetScales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B201CB3626CFBE9D00CE86E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B201CB3726CFBE9D00CE86E1 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		B201CB3C26CFBE9D00CE86E1 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,8 +162,8 @@
 		B201CB2D26CFBE9D00CE86E1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B201CB2C26CFBE9D00CE86E1 /* MusicScales.app */,
-				B201CB3426CFBE9D00CE86E1 /* MusicScales.app */,
+				B201CB2C26CFBE9D00CE86E1 /* TrumpetScales.app */,
+				B201CB3426CFBE9D00CE86E1 /* TrumpetScales.app */,
 				B201CB3C26CFBE9D00CE86E1 /* Tests iOS.xctest */,
 				B201CB4726CFBE9D00CE86E1 /* Tests macOS.xctest */,
 			);
@@ -216,9 +216,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B201CB2B26CFBE9D00CE86E1 /* MusicScales (iOS) */ = {
+		B201CB2B26CFBE9D00CE86E1 /* TrumpetScales (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B201CB5626CFBE9D00CE86E1 /* Build configuration list for PBXNativeTarget "MusicScales (iOS)" */;
+			buildConfigurationList = B201CB5626CFBE9D00CE86E1 /* Build configuration list for PBXNativeTarget "TrumpetScales (iOS)" */;
 			buildPhases = (
 				B201CB2826CFBE9D00CE86E1 /* Sources */,
 				B201CB2926CFBE9D00CE86E1 /* Frameworks */,
@@ -228,14 +228,14 @@
 			);
 			dependencies = (
 			);
-			name = "MusicScales (iOS)";
+			name = "TrumpetScales (iOS)";
 			productName = "MusicScales (iOS)";
-			productReference = B201CB2C26CFBE9D00CE86E1 /* MusicScales.app */;
+			productReference = B201CB2C26CFBE9D00CE86E1 /* TrumpetScales.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B201CB3326CFBE9D00CE86E1 /* MusicScales (macOS) */ = {
+		B201CB3326CFBE9D00CE86E1 /* TrumpetScales (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B201CB5926CFBE9D00CE86E1 /* Build configuration list for PBXNativeTarget "MusicScales (macOS)" */;
+			buildConfigurationList = B201CB5926CFBE9D00CE86E1 /* Build configuration list for PBXNativeTarget "TrumpetScales (macOS)" */;
 			buildPhases = (
 				B201CB3026CFBE9D00CE86E1 /* Sources */,
 				B201CB3126CFBE9D00CE86E1 /* Frameworks */,
@@ -245,9 +245,9 @@
 			);
 			dependencies = (
 			);
-			name = "MusicScales (macOS)";
+			name = "TrumpetScales (macOS)";
 			productName = "MusicScales (macOS)";
-			productReference = B201CB3426CFBE9D00CE86E1 /* MusicScales.app */;
+			productReference = B201CB3426CFBE9D00CE86E1 /* TrumpetScales.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B201CB3B26CFBE9D00CE86E1 /* Tests iOS */ = {
@@ -311,7 +311,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B201CB2326CFBE9C00CE86E1 /* Build configuration list for PBXProject "MusicScales" */;
+			buildConfigurationList = B201CB2326CFBE9C00CE86E1 /* Build configuration list for PBXProject "TrumpetScales" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -324,8 +324,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B201CB2B26CFBE9D00CE86E1 /* MusicScales (iOS) */,
-				B201CB3326CFBE9D00CE86E1 /* MusicScales (macOS) */,
+				B201CB2B26CFBE9D00CE86E1 /* TrumpetScales (iOS) */,
+				B201CB3326CFBE9D00CE86E1 /* TrumpetScales (macOS) */,
 				B201CB3B26CFBE9D00CE86E1 /* Tests iOS */,
 				B201CB4626CFBE9D00CE86E1 /* Tests macOS */,
 			);
@@ -437,12 +437,12 @@
 /* Begin PBXTargetDependency section */
 		B201CB3E26CFBE9D00CE86E1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B201CB2B26CFBE9D00CE86E1 /* MusicScales (iOS) */;
+			target = B201CB2B26CFBE9D00CE86E1 /* TrumpetScales (iOS) */;
 			targetProxy = B201CB3D26CFBE9D00CE86E1 /* PBXContainerItemProxy */;
 		};
 		B201CB4926CFBE9D00CE86E1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B201CB3326CFBE9D00CE86E1 /* MusicScales (macOS) */;
+			target = B201CB3326CFBE9D00CE86E1 /* TrumpetScales (macOS) */;
 			targetProxy = B201CB4826CFBE9D00CE86E1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -579,7 +579,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.typoland.MusicScales;
-				PRODUCT_NAME = MusicScales;
+				PRODUCT_NAME = TrumpetScales;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -601,7 +601,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.typoland.MusicScales;
-				PRODUCT_NAME = MusicScales;
+				PRODUCT_NAME = TrumpetScales;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -627,7 +627,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.typoland.MusicScales;
-				PRODUCT_NAME = MusicScales;
+				PRODUCT_NAME = TrumpetScales;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -651,7 +651,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.typoland.MusicScales;
-				PRODUCT_NAME = MusicScales;
+				PRODUCT_NAME = TrumpetScales;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -749,7 +749,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B201CB2326CFBE9C00CE86E1 /* Build configuration list for PBXProject "MusicScales" */ = {
+		B201CB2326CFBE9C00CE86E1 /* Build configuration list for PBXProject "TrumpetScales" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B201CB5426CFBE9D00CE86E1 /* Debug */,
@@ -758,7 +758,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B201CB5626CFBE9D00CE86E1 /* Build configuration list for PBXNativeTarget "MusicScales (iOS)" */ = {
+		B201CB5626CFBE9D00CE86E1 /* Build configuration list for PBXNativeTarget "TrumpetScales (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B201CB5726CFBE9D00CE86E1 /* Debug */,
@@ -767,7 +767,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B201CB5926CFBE9D00CE86E1 /* Build configuration list for PBXNativeTarget "MusicScales (macOS)" */ = {
+		B201CB5926CFBE9D00CE86E1 /* Build configuration list for PBXNativeTarget "TrumpetScales (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B201CB5A26CFBE9D00CE86E1 /* Debug */,
